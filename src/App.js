@@ -64,7 +64,7 @@ function App() {
     <div className="App">
       <h1 style={{ textAlign: 'center', margin: '30px 0 0', height: 'calc(10vh - 30px)' }}>SpaceX Launches</h1>
       <div
-        onScroll={event => onScroll(event, lodaMore)}
+        onScroll={event => onScroll(event, /* TODO lodaMore */)}
         style={{ maxHeight: '90vh', overflow: 'auto' }}
       >
         {isSuccess
