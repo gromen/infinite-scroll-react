@@ -1,21 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import {
-  ApolloClient, ApolloProvider, InMemoryCache, useQuery, gql
-} from '@apollo/client';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import App from './App';
 
-const client = new ApolloClient({
-  uri: 'https://api.spacex.land/graphql/',
-  cache: new InMemoryCache()
-});
+const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <ApolloProvider client={client}>
+    <QueryClientProvider client={client}>
       <App />
-    </ApolloProvider>
+      <ReactQueryDevtools initialIsOpen />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
